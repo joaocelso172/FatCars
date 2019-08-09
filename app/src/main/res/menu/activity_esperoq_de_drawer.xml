@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/navHome"
+            android:icon="@drawable/house"
+            android:title="Tela Inicial" />
+
+        <item
+            android:id="@+id/app_bar_search"
+            android:title="Procurar modelo"
+            app:actionViewClass="android.widget.SearchView" />
+
+    </group>
+
+    <item android:title="Acessórios">
+        <menu>
+            <item
+                android:checked="false"
+                android:enabled="false"
+                android:title="Cambio" />
+            <item
+                app:actionViewClass="android.widget.CheckBox"
+                android:id="@+id/nav_share"
+                android:title="Automático" />
+            <item
+                android:id="@+id/nav_send"
+                android:checkable="true"
+                android:title="Manual"
+                app:actionViewClass="android.widget.CheckBox" />
+            <item
+                android:enabled="false"
+                android:title="Extras"/>
+            <item
+                app:actionViewClass="android.widget.CheckBox"
+                android:id="@+id/nav_tools"
+                android:title="Ar Condicionado" />
+            <item
+                app:actionViewClass="android.widget.CheckBox"
+                android:id="@+id/nav_slideshow"
+                android:title="Travas elétricas" />
+            <item
+                android:enabled="false"
+                android:title="Direção"/>
+            <item
+                app:actionViewClass="android.widget.CheckBox"
+                android:id="@+id/nav_gallery"
+                android:title="Elétrica" />
+            <item
+                app:actionViewClass="android.widget.CheckBox"
+                android:id="@+id/nav_lery"
+                android:title="Hidráulica" />
+        </menu>
+    </item>
+
+</menu>
