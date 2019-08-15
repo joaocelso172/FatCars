@@ -18,6 +18,7 @@ import android.widget.ToggleButton;
 
 import com.example.fatcars.R;
 import com.example.fatcars.cadastro;
+import com.example.fatcars.gravarDadosCep;
 import com.example.fatcars.telaLogin;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -27,6 +28,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
  */
 public class CadastroFragment extends Fragment implements View.OnClickListener{
 
+    private gravarDadosCep preferencias;
     private ToggleButton toggleTipoPessoa;
     private TextInputLayout nome;
     private TextInputLayout sobrenome;
@@ -61,6 +63,8 @@ public class CadastroFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_cadastro, container, false);
+
+        preferencias = new gravarDadosCep(getContext());
             cpfdados = v.findViewById(R.id.inputCPF);
             Pnome = v.findViewById(R.id.etNome);
             Snome = v.findViewById(R.id.etSnome);
@@ -68,6 +72,7 @@ public class CadastroFragment extends Fragment implements View.OnClickListener{
             Nickname = v.findViewById(R.id.etUser);
             Pass = v.findViewById(R.id.etPass);
             dataNascimento = v.findViewById(R.id.etDate);
+
 
         toggleTipoPessoa = v.findViewById(R.id.toggleTipo);
         nome = v.findViewById(R.id.editNome);
@@ -91,6 +96,16 @@ public class CadastroFragment extends Fragment implements View.OnClickListener{
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        String texto = Pnome.getText().toString();
+        Toast.makeText(getContext(), "onDestroy", Toast.LENGTH_SHORT).show();
+        if (!texto.equals("")){
+            preferencias.salvarDados(texto);
+            Toast.makeText(getContext(), texto, Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public void mudarDados() {
         if (toggleTipoPessoa.isChecked()) {
@@ -118,6 +133,7 @@ public class CadastroFragment extends Fragment implements View.OnClickListener{
         }
 
     }
+
     public void mTela(){
 
     }

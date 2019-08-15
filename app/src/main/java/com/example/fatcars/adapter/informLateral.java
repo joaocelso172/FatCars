@@ -31,6 +31,8 @@ public class informLateral extends AppCompatActivity
         startActivity(irReservar);
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,7 @@ public class informLateral extends AppCompatActivity
         fabricante.setText(informCarro.montadora);
         anoFabrica.setText(informCarro.anoFab);
         precoAlug.setText(informCarro.valor);
+
     }
 
     @Override

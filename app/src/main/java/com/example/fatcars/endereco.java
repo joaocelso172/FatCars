@@ -18,7 +18,8 @@ import java.util.concurrent.ExecutionException;
 
 public class endereco extends AppCompatActivity {
 
-   // String ruaExport = "";
+
+    // String ruaExport = "";
 
   /*  public String getRuaExport() {
         return ruaExport;
