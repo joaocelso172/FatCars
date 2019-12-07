@@ -120,7 +120,7 @@
         app:srcCompat="@drawable/logobranco" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnEntrarLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -129,17 +129,17 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="Logar"
         android:text="Entrar"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadastro"
         app:layout_constraintVertical_bias="0.125" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtCadastro"
         android:layout_width="154dp"
         android:layout_height="23dp"
         android:layout_marginStart="8dp"
@@ -148,7 +148,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="mudarCadastro"
         android:text="Cadastrar"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"

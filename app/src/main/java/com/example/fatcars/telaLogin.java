@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import static com.example.fatcars.Login.logado;
+
 public class telaLogin extends AppCompatActivity {
 
 
@@ -31,19 +33,14 @@ public class telaLogin extends AppCompatActivity {
         setContentView(R.layout.activity_tela_login);
         BemVindo = findViewById(R.id.textWelcome);
 
-        /*Bundle teste = getIntent().getExtras();
-        String email = teste.getString("email");*/
+        Bundle teste = getIntent().getExtras();
+        String email = teste.getString("email");
 
-        BemVindo.setText("Bem vindo, + email");
+        if (logado) {
+            BemVindo.setText("Bem vindo," + email);
 
-      //  this.tsts();
+        }
     }
 
-   // public void tsts(){
-   //     BemVindo = findViewById(R.id.textWelcome);
-        /*SQLiteDatabase banco = openOrCreateDatabase("app", MODE_PRIVATE, null);
-        Cursor cursor = banco.rawQuery("SELECT nome", null);
-        String NOme = cursor.getString(0);*/
-  //  }
 
 }

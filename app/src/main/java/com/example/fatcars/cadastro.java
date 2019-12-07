@@ -167,7 +167,6 @@ public class cadastro extends AppCompatActivity implements NavigationView.OnNavi
         vPager.setAdapter( vAdapter );
         STL.setViewPager(vPager);
 
-
       /*  toggleTipoPessoa = findViewById(R.id.toggleTipo);
         nome = findViewById(R.id.editNome);
         sobrenome = findViewById(R.id.editSobrenome);

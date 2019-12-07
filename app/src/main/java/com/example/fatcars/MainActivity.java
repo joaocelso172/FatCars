@@ -1,11 +1,17 @@
 package com.example.fatcars;
 
-import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Login login;
+    private TelaInicial_Fragment telaInicial_fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,36 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Intent intent = new Intent(this, catalogo.class);
        // startActivity(intent);
-    }
 
-  //  public void comecar (View view)
+        telaInicial_fragment = new TelaInicial_Fragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.constraintConteudo, telaInicial_fragment)
+                .addToBackStack("Fragment").commit();
 
-    public void fazerReserva (View view){
-        Intent fReserva = new Intent(this, reservar.class);
-        startActivity(fReserva);
-    }
+      //  Toast.makeText(getApplicationContext(), getFragmentManager().getBackStackEntryCount(), Toast.LENGTH_SHORT).show();
 
-    public void mudarTela (View view){
-        Intent Mudar = new Intent(this, reservar.class);
-        startActivity(Mudar);
-    }
-
-    public void mudarLogin (View view){
-        Intent login = new Intent(this, Login.class);
-        startActivity(login);
 
     }
-    public void mudarCadastro (View view){
-        Intent cadastrar = new Intent(this, cadastro.class);
-        startActivity(cadastrar);
-
-    }
-
-    public void A (View view){
-        Intent cadastrar = new Intent(this, MenuPadrao.class);
-        startActivity(cadastrar);
-
-    }
-
 
 }
